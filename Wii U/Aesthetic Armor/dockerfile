@@ -1,0 +1,16 @@
+FROM ghcr.io/wiiu-env/devkitppc:20240505
+
+WORKDIR /
+
+COPY --from=ghcr.io/wiiu-env/libkernel:20230621 /artifacts $DEVKITPRO
+COPY --from=wiiuenv/wiiupluginsystem:20230225 /artifacts $DEVKITPRO
+
+# Things for building
+VOLUME /src
+WORKDIR /src
+
+CMD mkdir -p build && \
+    cd build && \
+    rm -rf * && \
+    $DEVKITPRO/portlibs/wiiu/bin/powerpc-eabi-cmake ../ && \
+    make

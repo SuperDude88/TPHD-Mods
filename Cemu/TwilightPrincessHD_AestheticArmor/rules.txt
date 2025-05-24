@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001019E500,000500001019E600,000500001019C800
+name = "Aesthetic Armor"
+path = "The Legend of Zelda: Twilight Princess HD/Mods/Aesthetic Armor"
+description = Turns the magic armor into a double defense upgrade and removes its rupee drain.
+version = 7

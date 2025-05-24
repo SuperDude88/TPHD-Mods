@@ -1,0 +1,10 @@
+[AestheticArmor]
+moduleMatches = 0x1A03E108, 0xA3175EEA # USA/EUR, JPN
+
+0x0201a224 = li r0, 1 # always pretend we have rupees (don't make link heavy)
+0x02087614 = b 0x2087680 # don't change the brk when running out of rupees
+0x02055fdc = nop # don't change the brk when loading link
+0x020875e0 = nop # don't take away rupees while wearing the armor
+0x02056538 = nop # don't set the state that makes heavy boots sounds
+0x0201a3d0 = srwi r27, r27, 1 # halve any damage while the armor is on
+0x0201a3d4 = b 0x0201a3fc # skip the damage -> rupee stuff
